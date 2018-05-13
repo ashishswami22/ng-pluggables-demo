@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { NgPluggablesModule } from 'ng-pluggables';
 
-
 import { AppComponent } from './app.component';
-
 
 @NgModule({
   declarations: [
@@ -12,6 +11,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    AngularFontAwesomeModule,
     NgPluggablesModule
   ],
   providers: [],

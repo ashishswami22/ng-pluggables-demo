@@ -1,0 +1,43 @@
+.card {
+    text-align: center;
+}
+
+.card-text {
+    text-align: justify;
+}
+
+.card .usage {
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 0.85em
+}
+
+.card .component {
+    height: 200px;
+    padding: 10px;
+}
+
+::ng-deep ng-pluggable-microphone {
+    width: 50px;
+}
+
+::ng-deep ng-pluggable-microphone div {
+    display: inline-block;
+}
+
+.recorded {
+    width: 160px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.jumbotron {
+    padding: 10px;
+    text-align: center
+}
+
+.jumbotron .links a {
+    font-size: 0.9em;
+    margin-right: 25px;
+}

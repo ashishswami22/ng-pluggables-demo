@@ -1,20 +1,62 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<h1 style="text-align:center">
-    Welcome to {{ title }}!
-</h1>
+<div class="jumbotron">
+    <h1 class="display-4"> Welcome to {{ title }}!</h1>
+    <p class="lead">
+        This is a demonstration of reusable angular v6 components provided by 'ng-pluggables' package by <a href="https://ashishswami22.com" target="_blank">Ashish Swami</a>.
+    </p>
+    <div class="links">
+        <a href="https://www.npmjs.com/package/ng-pluggables" target="_blank">
+            <fa name="download"></fa> npm package</a>
+        <a href="https://github.com/ashishswami22/ng-pluggables" target="_blank">
+            <fa name="github"></fa> components source</a>
+        <a href="https://github.com/ashishswami22/ng-pluggables-demo" target="_blank">
+            <fa name="github"></fa> demo application source</a>
+    </div>
+</div>
 
-<table cellpadding="25px">
-    <tr style="vertical-align: top">
-        <td>
-            <h2 style="text-align:center">Analog Clock</h2>
-            <ng-pluggable-analog-clock [size]="200"></ng-pluggable-analog-clock>
-        </td>
-        <td>
-            <h2 style="text-align:center">Microphone</h2>
-            Component:
-            <ng-pluggable-microphone (recognize)="processAudioBlob($event)"></ng-pluggable-microphone>
-            <br/><br/> Audio captured by the component:<br/>
-            <audio #audioplayer controls></audio>
-        </td>
-    </tr>
-</table>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="card">
+                <div class="component">
+                    <ng-pluggable-analog-clock [size]="200"></ng-pluggable-analog-clock>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Analog Clock</h5>
+                    <p class="card-text">
+                        Simple analog clock. Currently only size is configurable in pixels. Soon I will add support for configuring timezone and color scheme.
+                    </p>
+                    <div class="alert alert-secondary usage" role="alert">
+                        &lt;ng-pluggable-analog-clock [size]="200"&gt;&lt;/ng-pluggable-analog-clock&gt;
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="card">
+                <div class="component">
+                    <ng-pluggable-microphone (recognize)="processAudioBlob($event)">
+                        <button class="btn btn-secondary microphone">
+                            <fa name="microphone"></fa>
+                        </button>
+                    </ng-pluggable-microphone>
+                    <audio class="recorded" #audioplayer controls></audio>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Microphone</h5>
+                    <p class="card-text">Click the microphone, hold it and speak to record your voice. It emits an event "recognize" which contains the audio blob. You can pass that audio to a speech recognition API. Here I am just passing it to an audio player for demo purpose.</p>
+
+                    <div class="alert alert-secondary usage" role="alert">
+
+                        &lt;ng-pluggable-microphone (recognize)="processAudioBlob($event)"&gt;<br/> &nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="btn btn-secondary microphone"&gt;<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fa name="microphone"&gt;&lt;/fa&gt;<br/>                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+                        <br/> &lt;/ng-pluggable-microphone&gt;
+                        <br/>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

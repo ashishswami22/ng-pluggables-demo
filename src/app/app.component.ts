@@ -8,7 +8,7 @@ import { Component, ViewChild, AfterViewInit } from '@angular/core';
 export class AppComponent {
   @ViewChild('audioplayer') audioplayer;
 
-  title = 'ng-pluggables library demo application';
+  title = 'ng-pluggables demo application';
 
   processAudioBlob(blob: Blob) {
     var audioURL = window.URL.createObjectURL(blob);
