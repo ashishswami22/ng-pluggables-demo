@@ -18,16 +18,27 @@
     <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="card">
-                <div class="component">
-                    <ng-pluggable-analog-clock [size]="200"></ng-pluggable-analog-clock>
+                <div class="component row">
+                    <div class="col-md-4">
+                        India:<br/>
+                        <ng-pluggable-analog-clock [size]="90" [gradiantA]="'#00FFFF'" [gradiantB]="'black'"></ng-pluggable-analog-clock>
+                    </div>
+                    <div class="col-md-4">
+                        UTC:<br/>
+                        <ng-pluggable-analog-clock [size]="90" [gradiantA]="'#FF8923'" [gradiantB]="'#FFF'" [timezoneOffsetInMinutes]="0"></ng-pluggable-analog-clock>
+                    </div>
+                    <div class="col-md-4">
+                        Japan:<br/>
+                        <ng-pluggable-analog-clock [size]="90" [gradiantA]="'#FFFF00'" [gradiantB]="'#00AA00'" [timezoneOffsetInMinutes]="540"></ng-pluggable-analog-clock>
+                    </div>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Analog Clock</h5>
                     <p class="card-text">
-                        Simple analog clock. Currently only size is configurable in pixels. Soon I will add support for configuring timezone and color scheme.
+                        Simple analog clock. Currently only size is configurable in pixels. Supports configuration for timezone and color scheme.
                     </p>
                     <div class="alert alert-secondary usage" role="alert">
-                        &lt;ng-pluggable-analog-clock [size]="200"&gt;&lt;/ng-pluggable-analog-clock&gt;
+                        &lt;ng-pluggable-analog-clock [size]="90" [gradiantA]="'#FFFF00'" [gradiantB]="'#00AA00'" [timezoneOffsetInMinutes]="540"&gt;&lt;/ng-pluggable-analog-clock&gt;
                     </div>
                 </div>
             </div>
@@ -36,7 +47,7 @@
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="card">
                 <div class="component">
-                    <ng-pluggable-microphone (recognize)="processAudioBlob($event)">
+                    <ng-pluggable-microphone (recognize)="processAudioBlob($event)" style="margin-left: -90px">
                         <button class="btn btn-secondary microphone">
                             <fa name="microphone"></fa>
                         </button>
@@ -57,6 +68,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
