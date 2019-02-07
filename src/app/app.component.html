@@ -2,47 +2,52 @@
 <div class="jumbotron">
     <h1 class="display-4"> Welcome to {{ title }}!</h1>
     <p class="lead">
-        This is a demonstration of reusable angular v6 components provided by 'ng-pluggables' package by <a href="https://ashishswami22.com" target="_blank">Ashish Swami</a>.
+        This is a demonstration of reusable angular v6 components provided by 'ng-pluggables' package by <a href="https://ashishswami22.com"
+            target="_blank">Ashish Swami</a>.
     </p>
     <div class="links">
         <a href="https://www.npmjs.com/package/ng-pluggables" target="_blank">
-            <fa name="download"></fa> npm package</a>
+            <fa name="download"></fa> npm package
+        </a>
         <a href="https://github.com/ashishswami22/ng-pluggables" target="_blank">
-            <fa name="github"></fa> components source</a>
+            <fa name="github"></fa> components source
+        </a>
         <a href="https://github.com/ashishswami22/ng-pluggables-demo" target="_blank">
-            <fa name="github"></fa> demo application source</a>
+            <fa name="github"></fa> demo application source
+        </a>
     </div>
 </div>
 
 <div class="container">
     <div class="row">
+
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="card">
-                <div class="component row">
-                    <div class="col-md-4">
-                        India:<br/>
-                        <ng-pluggable-analog-clock [size]="90" [gradiantA]="'#00FFFF'" [gradiantB]="'black'"></ng-pluggable-analog-clock>
-                    </div>
-                    <div class="col-md-4">
-                        UTC:<br/>
-                        <ng-pluggable-analog-clock [size]="90" [gradiantA]="'#FF8923'" [gradiantB]="'#FFF'" [timezoneOffsetInMinutes]="0"></ng-pluggable-analog-clock>
-                    </div>
-                    <div class="col-md-4">
-                        Japan:<br/>
-                        <ng-pluggable-analog-clock [size]="90" [gradiantA]="'#FFFF00'" [gradiantB]="'#00AA00'" [timezoneOffsetInMinutes]="540"></ng-pluggable-analog-clock>
-                    </div>
+                <div class="component">
+                    <ng-pluggable-currency-converter></ng-pluggable-currency-converter>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Analog Clock</h5>
+                    <h5 class="card-title">Currency Converter</h5>
                     <p class="card-text">
-                        Simple analog clock. Currently only size is configurable in pixels. Supports configuration for timezone and color scheme.
+                        Select any two currencies, to start with, and quickly check conversion between them.
+                        You can also keep adding more currencies and get all the converted values at once.
+                        <br />
+                        By default, the component fetches currency coversion rates from
+                        <a href="https://api.exchangeratesapi.io/latest?base=INR" target="_blank">this url</a>.
+                        You can also pass the currency data by yourself as part of optional
+                        <a href="assets/currency-converter-input-config.txt" target="_blank">[config]</a>
+                        input.
                     </p>
+
                     <div class="alert alert-secondary usage" role="alert">
-                        &lt;ng-pluggable-analog-clock [size]="90" [gradiantA]="'#FFFF00'" [gradiantB]="'#00AA00'" [timezoneOffsetInMinutes]="540"&gt;&lt;/ng-pluggable-analog-clock&gt;
+                        &lt;ng-pluggable-currency-converter
+                        [config]=&quot;config&quot;&gt;<br />
+                        &lt;/ng-pluggable-currency-converter&gt;
                     </div>
                 </div>
             </div>
         </div>
+
 
         <div class="col-sm-12 col-md-6 col-lg-4">
             <div class="card">
@@ -56,20 +61,59 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Microphone</h5>
-                    <p class="card-text">Click the microphone, hold it and speak to record your voice. It emits an event "recognize" which contains the audio blob. You can pass that audio to a speech recognition API. You can use online speech recognition services by <a target="_blank"
-                            href="https://cloud.google.com/speech-to-text/docs/">Google</a>,
+                    <p class="card-text">Click the microphone, hold it and speak to record your voice. It emits an
+                        event "recognize" which contains the audio blob. You can pass that audio to a speech
+                        recognition API. You can use online speech recognition services by <a target="_blank" href="https://cloud.google.com/speech-to-text/docs/">Google</a>,
                         <a target="_blank" href="https://azure.microsoft.com/en-in/services/cognitive-services/speech/">Microsoft</a>,
-                        <a target="_blank" href="https://aws.amazon.com/transcribe/">Amazon</a>, etc. or create <a target="_blank" href="https://github.com/ashishswami22/demo-apis/blob/master/src/main/java/com/ashishswami22/demoapis/controllers/STTController.java">your own STT API like me</a>.</p>
+                        <a target="_blank" href="https://aws.amazon.com/transcribe/">Amazon</a>, etc. or create <a
+                            target="_blank" href="https://github.com/ashishswami22/demo-apis/blob/master/src/main/java/com/ashishswami22/demoapis/controllers/STTController.java">your
+                            own STT API like me</a>.</p>
 
                     <div class="alert alert-secondary usage" role="alert">
 
-                        &lt;ng-pluggable-microphone (recognize)="processAudioBlob($event)"&gt;<br/> &nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="btn btn-secondary microphone"&gt;<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fa name="microphone"&gt;&lt;/fa&gt;<br/>                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;
-                        <br/> &lt;/ng-pluggable-microphone&gt;
-                        <br/>
+                        &lt;ng-pluggable-microphone (recognize)="processAudioBlob($event)"&gt;<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="btn btn-secondary microphone"&gt;<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;fa name="microphone"&gt;&lt;/fa&gt;<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;
+                        <br /> &lt;/ng-pluggable-microphone&gt;
+                        <br />
 
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <div class="card">
+                <div class="component row">
+                    <div class="col-md-4">
+                        India:<br />
+                        <ng-pluggable-analog-clock [size]="90" [gradiantA]="'#00FFFF'" [gradiantB]="'black'"></ng-pluggable-analog-clock>
+                    </div>
+                    <div class="col-md-4">
+                        UTC:<br />
+                        <ng-pluggable-analog-clock [size]="90" [gradiantA]="'#FF8923'" [gradiantB]="'#FFF'"
+                            [timezoneOffsetInMinutes]="0"></ng-pluggable-analog-clock>
+                    </div>
+                    <div class="col-md-4">
+                        Japan:<br />
+                        <ng-pluggable-analog-clock [size]="90" [gradiantA]="'#FFFF00'" [gradiantB]="'#00AA00'"
+                            [timezoneOffsetInMinutes]="540"></ng-pluggable-analog-clock>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Analog Clock</h5>
+                    <p class="card-text">
+                        Simple analog clock. Currently only size is configurable in pixels. Supports configuration for
+                        timezone and color scheme.
+                    </p>
+                    <div class="alert alert-secondary usage" role="alert">
+                        &lt;ng-pluggable-analog-clock [size]="90" [gradiantA]="'#FFFF00'" [gradiantB]="'#00AA00'"
+                        [timezoneOffsetInMinutes]="540"&gt;&lt;/ng-pluggable-analog-clock&gt;
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>

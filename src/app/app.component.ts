@@ -7,7 +7,21 @@ import { STTService } from './services/stt.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private sttService: STTService) {}
+  config = {
+    currencies: [{
+      key: 'INR',
+      display_name: 'Indian Rupees',
+      base: 'INR',
+      rate: 1
+    },
+    {
+      key: 'USD',
+      display_name: 'United States Dollar',
+      base: 'INR',
+      rate: 0.0139914041
+    }]
+  }
+  constructor(private sttService: STTService) { }
 
   @ViewChild('audioplayer') audioplayer;
 
