@@ -10,7 +10,7 @@ const config = {
         key: 'USD',
         display_name: 'United States Dollar',
         base: 'INR',
-        rate: 0.0139914041
+        rate: 0.0139914041 // number to multiply with to convert it to base currency
     }, 
     ...............
     ...............
@@ -18,4 +18,6 @@ const config = {
     ...............
     ...............
     ]
-}
+};
+
+// NOTE: The component doesn't support different base currencies yet. So base should be same for all.

@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
@@ -13,6 +14,7 @@ import { STTService } from './services/stt.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     AngularFontAwesomeModule,
     NgPluggablesModule

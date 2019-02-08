@@ -22,12 +22,48 @@
     <div class="row">
 
         <div class="col-sm-12 col-md-6 col-lg-4">
+            <h5 class="card-title">Number Internationalization</h5>
+            <div class="card">
+                <div class="component" style="text-align: left">
+                    <input class="form-control" type="text" [(ngModel)]="numberI18nSample" (focus)="$event.target.select()">
+                    <br /> Hindi:
+                    <ng-pluggable-number-i18n [value]="numberI18nSample" [selectedLocale]="'hi-IN'"></ng-pluggable-number-i18n>
+                    <br /> Kannada:
+                    <ng-pluggable-number-i18n [value]="numberI18nSample" [selectedLocale]="'ka-IN'"></ng-pluggable-number-i18n>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Digit by digit translation of number from English to other language.
+                        RTL languages and languages which do not follow digit by digit logic throughout (e.g.
+                        Japanese), are not supported yet.
+                        <br />
+                        By default, the component supports a few locales which you can test by passing locale name in
+                        [selectedLocale] input and the number to be translated in [value] input.
+                        <br />
+                        You can also pass the locales data by yourself as part of optional
+                        <a href="assets/number-i18n-input-locales.txt" target="_blank">[locales]</a>
+                        input.
+                    </p>
+
+                    <div class="alert alert-secondary usage" role="alert">
+                        &lt;ng-pluggable-number-i18n
+                        [locales]=&quot;locales&quot;&gt;<br />
+                        [value]=&quot;value&quot;&gt;<br />
+                        [selectedLocale]=&quot;&apos;hi-IN&apos;&quot;&gt;<br />
+                        &lt;/ng-pluggable-number-i18n&gt;
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            <h5 class="card-title">Currency Converter</h5>
             <div class="card">
                 <div class="component">
                     <ng-pluggable-currency-converter></ng-pluggable-currency-converter>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Currency Converter</h5>
                     <p class="card-text">
                         Select any two currencies, to start with, and quickly check conversion between them.
                         You can also keep adding more currencies and get all the converted values at once.
@@ -50,6 +86,7 @@
 
 
         <div class="col-sm-12 col-md-6 col-lg-4">
+            <h5 class="card-title">Microphone</h5>
             <div class="card">
                 <div class="component">
                     <ng-pluggable-microphone (recognize)="processAudioBlob($event)" style="margin-left: -90px">
@@ -60,14 +97,12 @@
                     <audio class="recorded" #audioplayer controls></audio>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Microphone</h5>
                     <p class="card-text">Click the microphone, hold it and speak to record your voice. It emits an
                         event "recognize" which contains the audio blob. You can pass that audio to a speech
                         recognition API. You can use online speech recognition services by <a target="_blank" href="https://cloud.google.com/speech-to-text/docs/">Google</a>,
                         <a target="_blank" href="https://azure.microsoft.com/en-in/services/cognitive-services/speech/">Microsoft</a>,
-                        <a target="_blank" href="https://aws.amazon.com/transcribe/">Amazon</a>, etc. or create <a
-                            target="_blank" href="https://github.com/ashishswami22/demo-apis/blob/master/src/main/java/com/ashishswami22/demoapis/controllers/STTController.java">your
-                            own STT API like me</a>.</p>
+                        <a target="_blank" href="https://aws.amazon.com/transcribe/">Amazon</a>, etc. or create your
+                        own speech-to-text API.</p>
 
                     <div class="alert alert-secondary usage" role="alert">
 
@@ -84,6 +119,7 @@
         </div>
 
         <div class="col-sm-12 col-md-6 col-lg-4">
+            <h5 class="card-title">Analog Clock</h5>
             <div class="card">
                 <div class="component row">
                     <div class="col-md-4">
@@ -102,7 +138,6 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Analog Clock</h5>
                     <p class="card-text">
                         Simple analog clock. Currently only size is configurable in pixels. Supports configuration for
                         timezone and color scheme.

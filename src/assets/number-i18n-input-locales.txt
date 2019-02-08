@@ -1,0 +1,14 @@
+// TypeScript code
+const locales = [{
+  locale: 'en-US',
+  digits: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+}, {
+  locale: 'hi-IN',
+  digits: ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९']
+}, {
+  locale: 'ka-IN',
+  digits: ['೦', '೧', '೨', '೩', '೪', '೫', '೬', '೭', '೮', '೯']
+}];
+
+// NOTE: RTL languages (e.g. Arabic) and languages which do not follow digit by digit logic throughout 
+// (e.g. Japanese), are not supported yet.
