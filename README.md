@@ -1,5 +1,5 @@
 # Demo
-Live demo: https://ashishswami22.com/apps/ng-pluggables-demo/
+Live demo: https://ashishswami22.github.io/apps/ng-pluggables-demo/
 
 ## Development server
 
